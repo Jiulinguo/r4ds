@@ -121,6 +121,8 @@ planes %>%
 weather %>% 
   count(year, month, day, hour, origin) %>% 
   filter(n > 1)
+  
+  # you dont get data frame [0x6] but [3x6]
 ```
 
 Sometimes a table doesn't have an explicit primary key: each row is an observation, but no combination of variables reliably identifies it. For example, what's the primary key in the `flights` table? You might think it would be the date plus the flight or tail number, but neither of those are unique:
